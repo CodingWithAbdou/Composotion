@@ -1,0 +1,51 @@
+@use "./scss/helpers/varaibles" as *;
+@use "./scss/layout/grid";
+
+// text center
+
+@media #{$xs} {
+  .text-xs-c {
+    text-align: center;
+  }
+  .text-xs-s {
+    text-align: start;
+  }
+}
+@media #{$sm} {
+  .text-sm-c {
+    text-align: center;
+  }
+  .text-sm-s {
+    text-align: start;
+  }
+}
+@media #{$md} {
+  .text-md-c {
+    text-align: center;
+  }
+  .text-md-s {
+    text-align: start;
+  }
+}
+@media #{$lg} {
+  .text-lg-c {
+    text-align: center;
+  }
+  .text-lg-s {
+    text-align: start;
+  }
+}
+@media #{$xl} {
+  .text-xl-c {
+    text-align: center;
+  }
+  .text-xl-s {
+    text-align: start;
+  }
+}
+
+// add paddin top and bottom
+%py {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

@@ -1,0 +1,75 @@
+// fetch var  and give them some value defrence
+
+@use "./scss/helpers/varaibles" as *;
+
+$left: right;
+$right: left;
+
+// fetch page need fxing
+
+// can you call page direct with @use
+
+// buttons :
+
+.the-toggle {
+  &:hover {
+    span {
+      &:nth-child(2) {
+        margin-#{$left}: -10px;
+        margin-#{$right}: 0px;
+      }
+    }
+  }
+}
+
+.top-page {
+  #{$right}: -50px;
+  #{$left}: auto;
+  transition: #{$right} 0.4s;
+  &.active {
+    #{$right}: 10px;
+    #{$left}: auto;
+  }
+}
+
+//header" :
+
+header {
+  .container {
+    .the-toggle {
+      margin-#{$left}: auto;
+      margin-#{$right}: 0;
+    }
+  }
+}
+
+// homePage :
+
+// >>>>> Slider
+
+.slider {
+  blockquote {
+    &::before {
+      content: "\f10e";
+    }
+    &::after {
+      content: "\f10d";
+    }
+  }
+}
+
+// >>>>>  Players
+
+.players {
+  .boxes {
+    .body {
+      a {
+        &::before {
+          content: "\f100";
+          #{$right}: -25px;
+          #{$left}: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@use "./scss/helpers/varaibles" as *;
+@use "./scss/helpers//mixins" as *;
+@use "./scss/components/buttons";
+@use "./scss/components/classes";
+
+/* Start Footer */
+
+footer {
+  background-color: #eee;
+  .boxes {
+    @extend %py;
+    display: flex;
+    flex-wrap: wrap;
+    > .box {
+      margin-bottom: 15px;
+
+      &:not(.gallery) {
+        @media #{$lg} {
+          width: 25%;
+        }
+        width: 50%;
+      }
+      > .title {
+        margin: 0 0 15px;
+        color: #868686;
+        font: {
+          size: 1.4rem;
+          weight: 500;
+        }
+      }
+    }
+    .gallery {
+      width: 100%;
+      margin-bottom: 20px;
+      @media #{$lg} {
+        width: 50%;
+        margin-bottom: 0px;
+      }
+      .image {
+        @include centering;
+        flex-direction: column;
+        @media #{$lg} {
+          flex-direction: row;
+        }
+        margin-bottom: 15px;
+        img {
+          width: 140px;
+          height: 140px;
+          border: 4px solid #ddd;
+          border-radius: 4px;
+        }
+        .description {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          @media #{$lg} {
+            padding: 0 12px;
+          }
+          h4 {
+            margin: 0;
+            color: $red;
+            font-size: 1.25rem;
+          }
+          p {
+            margin-top: 10px;
+            line-height: 1.7;
+            color: #6a6a6a;
+          }
+        }
+      }
+    }
+    .detais {
+      .list {
+        @include unstile;
+        line-height: 1.8;
+        color: #6a6a6a;
+        margin-top: -3px;
+        li {
+          span {
+            color: $red;
+          }
+        }
+      }
+      > p {
+        color: #6a6a6a;
+        span {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .contact {
+      input,
+      textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px;
+        border-radius: 6px;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+        min-height: 140px;
+        resize: none;
+      }
+      [type="submit"] {
+        @extend %btn-cheep;
+        background-color: $red;
+        color: #fff;
+        width: fit-content;
+      }
+    }
+  }
+  .author {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 2px solid #ddd;
+    color: #8f8f8f;
+    @media #{$sm} {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* End Footer */

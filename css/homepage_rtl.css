@@ -1,0 +1,33 @@
+.the-toggle:hover span:nth-child(2) {
+  margin-right: -10px;
+  margin-left: 0px;
+}
+
+.top-page {
+  left: -50px;
+  right: auto;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s;
+}
+.top-page.active {
+  left: 10px;
+  right: auto;
+}
+
+header .container .the-toggle {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.slider blockquote::before {
+  content: "\f10e";
+}
+.slider blockquote::after {
+  content: "\f10d";
+}
+
+.players .boxes .body a::before {
+  content: "\f100";
+  left: -25px;
+  right: auto;
+}

@@ -1,0 +1,182 @@
+@use "./scss/helpers/varaibles" as *;
+@use "./scss/helpers//mixins" as *;
+@use "./scss/components/buttons";
+@use "./scss/components/classes";
+
+/* Start Slider*/
+
+.slider {
+  @extend %py;
+  blockquote {
+    width: 80%;
+    text-align: center;
+    line-height: 1.7;
+    color: $grey;
+    margin: 0 auto 20px;
+    font: {
+      size: 1.3rem;
+      weight: bold;
+      style: italic;
+    }
+    &::before,
+    &::after {
+      font : {
+        family: "Font Awesome 6 Free";
+        weight: 900;
+        size: 0.9rem;
+      }
+      position: relative;
+      color: $red;
+    }
+    &::before {
+      content: "\f10d";
+      bottom: 10px;
+      left: 5px;
+    }
+    &::after {
+      content: "\f10e";
+      top: 6px;
+      right: 3px;
+    }
+  }
+  .images {
+    width: 80%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px #bababa;
+      &:not(.active) {
+        display: none;
+      }
+    }
+  }
+
+  .control {
+    @include centering;
+    @include unstile;
+    padding: 10px;
+    li {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin-left: 8px;
+      background-color: #e5e5e5;
+      border: 2px solid #e5e5e5;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover,
+      &.active {
+        background-color: #fff;
+        border: 2px solid $red;
+      }
+    }
+  }
+}
+
+/* End Slider */
+
+/* Start Serveses*/
+
+.servses {
+  .boxes {
+    @extend %py;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 26px;
+    .titel {
+      font : {
+        size: 1.5rem;
+        weight: bold;
+      }
+      i {
+        font-size: 2rem;
+      }
+      span {
+        padding: 0 12px;
+      }
+    }
+    .body {
+      p {
+        margin: 12px 0;
+        line-height: 1.7;
+        color: #737373;
+      }
+      a {
+        @include unline_a($red);
+      }
+    }
+  }
+}
+/* End Serveses*/
+
+/* Start Players*/
+
+.players {
+  color: #737373;
+  .boxes {
+    @extend %py;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    .titel {
+      img {
+        max-width: 100%;
+        border-radius: 4px;
+      }
+      h4 {
+        margin: 10px 0;
+        span {
+          text-transform: capitalize;
+          font : {
+            weight: bold;
+            size: 1.1rem;
+          }
+        }
+      }
+    }
+    .body {
+      p {
+        margin: 10px 0;
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      a {
+        @include unline_a($red);
+        position: relative;
+        &::before {
+          content: "\f101";
+          font: {
+            family: "Font Awesome 6 Free";
+            weight: bold;
+            size: 0.9rem;
+          }
+          position: absolute;
+          #{$right}: -25px;
+          #{$left}: auto;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+/* End Players*/
+
+/* Start Lorem*/
+
+.lorem {
+  .boxes {
+    @extend %py;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 36px;
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+  }
+}
+/* End Slider*/
